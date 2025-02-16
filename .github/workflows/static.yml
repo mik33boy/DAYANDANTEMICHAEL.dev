@@ -28,12 +28,17 @@ jobs:
       - name: Build SvelteKit app
         run: npm run build
 
+      - name: List Build Directory (Debugging)
+        run: ls -la build/
+
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
+          name: sveltekit-pages
           path: 'build/'
 
       - name: Deploy to GitHub Pages
-        uses: actions/deploy-pages@v2
+        uses: actions/deploy-pages@v1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
+          artifact_name: sveltekit-pages
