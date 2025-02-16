@@ -41,8 +41,4 @@ jobs:
         uses: actions/deploy-pages@v1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-<<<<<<< HEAD
           artifact_name: sveltekit-pages
-=======
-          artifact-name: sveltekit-pages
->>>>>>> 0e4f8d41ecbf0bca0802901a8a9c998181390f26
