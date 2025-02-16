@@ -37,6 +37,11 @@ jobs:
           name: sveltekit-pages
           path: 'build/'
 
+      - name: Verify Uploaded Artifacts
+        run: |
+          echo "Uploaded artifacts:"
+          ls -la build/
+
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v1
         with:
